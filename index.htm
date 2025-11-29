@@ -1,0 +1,501 @@
+  <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rodine Motors — Kampala | New & Used Cars</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="description" content="Rodine Motors — New & used cars for sale in Kampala (Bakuli). Contact: 0749301852" />
+  <style>
+    :root{
+      --bg:#020101;
+      --card:#453645;
+      --muted:#939393:;
+      --accent:#597C5D;
+      --glass: rgba(229, 229, 229, 0.1);
+      --radius:14px;
+      --max-w:1100px;
+      --gap:18px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,#01050D 0%, #081422 60%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+      display:flex;
+      justify-content:center;
+      font-size:15px;
+      line-height:1.45;
+    }
+
+    .site{
+      width:100%;
+      max-width:var(--max-w);
+    }
+
+    /* Header */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      margin-bottom:26px;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .logo img{
+      width:56px;
+      height:56px;
+      object-fit: cover;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),#ffb86b);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      color:#071023;
+      font-size:18px;
+      box-shadow: 0 6px 18px rgba(239,127,26,0.12);
+    }
+    .brand h1{
+      margin:0;
+      font-size:16px;
+      letter-spacing:0.2px;
+    }
+    .brand p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .header-actions{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .call {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:var(--glass);
+      padding:10px 14px;
+      border-radius:12px;
+      color:var(--accent);
+      text-decoration:none;
+      border:1px solid rgba(239,127,26,0.08);
+      font-weight:600;
+    }
+    .socials a{
+      color:var(--muted);
+      text-decoration:none;
+      margin-left:10px;
+      font-size:18px;
+      
+    }
+
+    /* Hero */
+    .hero{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      padding:28px;
+      border-radius:var(--radius);
+      display:grid;
+      grid-template-columns: 250px 1fr;
+      gap:18px;
+      align-items:center;
+      margin-bottom:20px;
+    }
+    .hero h2{
+      margin:0 0 8px 0;
+      font-size:24px}
+    .hero p{margin:0;color:var(--muted)}
+
+    .search {
+      margin-top:12px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .search input, .search select{
+      padding:10px 12px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.04);
+      background:transparent;
+      color:inherit;
+      outline:none;
+      min-width:0;
+    }
+    .cta{
+      display:inline-block;
+      padding:10px 14px;
+      background:var(--accent);
+      color:#071023;
+      border-radius:10px;
+      font-weight:700;
+      text-decoration:none;
+      box-shadow:0 6px 18px rgba(239,127,26,0.12);
+    }
+
+    /* Inventory */
+    .controls{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin:18px 0;
+    }
+    .tabs button{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.04);
+      padding:8px 12px;
+      border-radius:10px;
+      color:var(--muted);
+      cursor:pointer;
+    }
+    .tabs button.active{
+      background:linear-gradient(90deg,rgba(239,127,26,0.12), rgba(255,184,107,0.06));
+      color:var(--accent);
+      border-color:rgba(239,127,26,0.14);
+      font-weight:700;
+    }
+    .inventory{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:var(--gap);
+    }
+    @media (max-width:980px){ .hero{grid-template-columns:1fr} .inventory{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:600px){ body{padding:18px} .inventory{grid-template-columns:1fr} .hero{padding:18px} }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px;
+      padding:12px;
+      border:1px solid rgba(255,255,255,0.03);
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.45);}
+    .car-img{
+      height:140px;
+      border-radius:10px;
+      background-size:cover;
+      background-position:center;
+      margin-bottom:10px;
+      display:flex;
+      align-items:flex-end;
+      padding:10px;
+      color:#fff;
+      font-weight:700;
+      text-shadow:0 6px 18px rgba(0,0,0,0.5);
+    }
+    .meta{display:flex;justify-content:space-between;align-items:center}
+    .meta .price{font-weight:800;color:var(--accent)}
+    .badge{font-size:12px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.03);color:var(--muted)}
+
+    .small{font-size:13px;color:var(--muted)}
+    .car-actions{display:flex;gap:8px;margin-top:10px}
+    .btn-outline{padding:8px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--muted);cursor:pointer}
+    .btn-primary{padding:8px 10px;border-radius:8px;background:var(--accent);color:#071023;font-weight:700;border:none;cursor:pointer}
+
+    /* Modal */
+    .modal{
+      position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+      background:rgba(2,6,23,0.6);padding:20px;visibility:hidden;opacity:0;transition:opacity .18s ease, visibility .18s ease;
+    }
+    .modal.open{visibility:visible;opacity:1}
+    .modal-card{max-width:600px;background:var(--card);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
+    .modal-grid{display:grid;grid-template-columns:1fr 320px;gap:14px}
+    @media (max-width:980px){ .modal-grid{grid-template-columns:1fr} }
+
+    /* Contact */
+    footer{
+      margin-top:22px;
+      padding:18px;
+      border-radius:12px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+      border:1px solid rgba(255,255,255,0.02);
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      justify-content:space-between;
+    }
+    .contact-card{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);min-width:240px}
+    .map{
+      width:100%;
+      height:160px;
+      border-radius:10px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.03);
+      background:linear-gradient(180deg, #081221, #0c1b2b);
+      color:var(--muted);
+      display:flex;align-items:center;justify-content:center;
+      font-size:13px;
+    }
+
+    /* small footer */
+    .fine{opacity:0.6;font-size:13px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="site" role="main">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"><img src="./logo.jpg" alt="rodinemotors-logo"  width="56"/></div>
+        <div>
+          <h1>Rodine Motors</h1>
+          <p>New & Used Cars • Kampala, Bakuli</p>
+        </div>
+      </div>
+
+      <div class="header-actions" aria-hidden="false">
+        <a class="call" href="https://tiktok.com" aria-label="tiktok" target="_blank"><i class="fab fa-tiktok"></i> Tiktok</a>
+        <div class="socials" aria-hidden="true">
+          <!-- replace links with your profiles -->
+          <a href="https://Facebook.com" title="Facebook" aria-label="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://instagram.com" title="Instagram" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://X.com" title="X / Twitter" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-heading">
+      <div>
+        <h2 id="hero-heading">Rodine Motors</h2>
+        <p>We stock brand new vehicles and carefully inspected Uganda-used cars.</p>
+
+        <div class="search" role="search" aria-label="Search inventory">
+          <input id="q" placeholder="Search model, make or year (e.g., Toyota, 2018)" />
+          <select id="sort" aria-label="Sort results">
+            <option value="recommended">Recommended</option>
+            <option value="price-low">Price: Low → High</option>
+            <option value="price-high">Price: High → Low</option>
+            <option value="year-new">Year: New → Old</option>
+          </select>
+          <a class="cta" id="quick-contact" href="mailto:rodinemotors@example.com?subject=Inquiry%20about%20a%20car">Request Quote</a>
+        </div>
+      </div>
+
+      <aside>
+        <div style="padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);">
+          <h3 style="margin:0 0 6px 0">Opening</h3>
+          <p class="small" style="margin:0 0 10px 0">Mon–Sat: 8:30 – 18:00</p>
+          <div style="display:flex;gap:8px;align-items:center">
+            <span class="badge">Location</span>
+            <p class="small" style="margin:0">Bakuli, Kampala</p>
+          </div>
+          <div style="margin-top:12px">
+            <a class="cta" href="tel:+256749301852"><i class="fas fa-phone"></i>Call Us on</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <div class="controls">
+      <div class="tabs" role="tablist" aria-label="Filter inventory">
+        <button class="active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button data-filter="new" role="tab">New</button>
+        <button data-filter="used" role="tab">Uganda Used</button>
+      </div>
+
+      <div style="margin-left:auto;display:flex;gap:10px;align-items:center">
+        <div class="small">Showing <strong id="count">0</strong> vehicles</div>
+      </div>
+    </div>
+
+    <section id="inventory" class="inventory" aria-live="polite" aria-label="Car inventory">
+      <!-- cards rendered by JS -->
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-card" role="document">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <strong id="modal-title">Car details</strong>
+          <button id="closeModal" aria-label="Close dialog" style="background:transparent;border:none;color:var(--muted);cursor:pointer">✕</button>
+        </div>
+        <div class="modal-grid">
+          <div id="modal-image" style="height:320px;border-radius:10px;background-size:cover;background-position:center"></div>
+          <div>
+            <p id="modal-meta" class="small"></p>
+            <p id="modal-desc" style="margin-top:8px;color:var(--muted)">—</p>
+            <div style="margin-top:12px">
+              <div style="display:flex;gap:8px">
+                <a id="modal-call" class="btn-primary" href="tel:+256749301852">Call Seller</a>
+                <a id="modal-mail" class="btn-outline" href="mailto:Rodine property consultants @gmail.com" target="_blabk">Email</a>
+              </div>
+              <div style="margin-top:14px" class="small fine">Price displayed is indicative. Contact Rodine Motors for exact availability and test drive bookings.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div style="flex:1">
+        <h3 style="margin:0 0 6px 0">Contact Rodine Motors</h3>
+        <div class="contact-card">
+          <p style="margin:0 0 8px 0"><strong>Tel:</strong> <a href="tel:+256749301852" style="color:inherit;text-decoration:none">0749 301 852</a></p>
+          <p style="margin:0 0 8px 0"><strong>Address:</strong> Bakuli, Kampala, Uganda</p>
+          <p style="margin:0 0 8px 0 gap:10px;)"><strong>Social:</strong> <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>  <i class="fab fa-instagram"></i>  <i class="fab fa-x-twitter"></i> </p>
+          <form id="contactForm" action="mailto:rodinemotors@example.com" method="GET" style="margin-top:10px">
+            <input name="subject" placeholder="Subject" style="width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;margin-bottom:8px;color:inherit" required>
+            <textarea name="body" rows="2" placeholder="Short message" style="width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit" required></textarea>
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <button class="btn-primary" type="submit">Send</button>
+              <a class="btn-outline" href="https://wa.me/256749301852" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div style="width:360px">
+        <div class="map" aria-hidden="true">Map placeholder — replace with Google Maps iframe</div>
+        <div style="margin-top:10px;text-align:right" class="fine">© Rodine Motors — All rights reserved</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Sample inventory data (replace images with real photos)
+    const cars = [
+      { id:1, make:'Toyota', model:'Corolla GLI', year:2024, price:41000000, condition:'new', location:'Kampala', img:'./toyotaGLI.jpg', desc:'Brand new Corolla GLI — warranty included.' },
+      { id:2, make:'Nissan', model:'X-Trail', year:2019, price:26500000, condition:'used', location:'Bakuli', img:'./nissan.jpg', desc:'Uganda-used, full service history, well maintained.' },
+      { id:3, make:'Toyota', model:'Prius', year:2017, price:21000000, condition:'used', location:'Kampala', img:'./pruis.jpg', desc:'Hybrid — excellent fuel economy, inspected.' },
+      { id:4, make:'Mazda', model:'CX-5', year:2025, price:68000000, condition:'new', location:'Kampala', img:'./mazda.jpg', desc:'Latest model available — finance options.' },
+      { id:5, make:'Toyota', model:'Rav4', year:2021, price:36000000, condition:'used', location:'Bakuli', img:'./Rava_4.jpg', desc:'One-owner Uganda used vehicle, good condition.' },
+      { id:6, make:'Honda', model:'Civic', year:2023, price:45000000, condition:'new', location:'Kampala', img:'./honda.jpg', desc:'New Civic — delivery and registration available.' }
+    ];
+
+    // Helpers
+    const inventoryEl = document.getElementById('inventory');
+    const countEl = document.getElementById('count');
+    const tabs = document.querySelectorAll('.tabs button');
+    const qInput = document.getElementById('q');
+    const sortSelect = document.getElementById('sort');
+
+    let activeFilter = 'all';
+    let query = '';
+    let sortBy = 'recommended';
+
+    function formatPrice(n){
+      // format integer to UGX-like string (no decimals)
+      return 'UGX ' + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function render(){
+      const lower = query.trim().toLowerCase();
+      let filtered = cars.filter(c => {
+        if(activeFilter !== 'all' && c.condition !== activeFilter) return false;
+        if(!lower) return true;
+        return (`${c.make} ${c.model} ${c.year} ${c.location}`).toLowerCase().includes(lower);
+      });
+
+      // Sorting
+      if(sortBy === 'price-low') filtered.sort((a,b)=>a.price-b.price);
+      if(sortBy === 'price-high') filtered.sort((a,b)=>b.price-a.price);
+      if(sortBy === 'year-new') filtered.sort((a,b)=>b.year-a.year);
+
+      inventoryEl.innerHTML = '';
+      countEl.textContent = filtered.length;
+
+      for(const car of filtered){
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.setAttribute('tabindex','0');
+        card.innerHTML = `
+          <div class="car-img" style="background-image:url('${car.img}');">
+            <div style="background:linear-gradient(180deg,transparent,rgba(0,0,0,0.5));padding:8px;border-radius:8px;">
+              <div style="font-size:15px">${car.make} ${car.model}</div>
+              <div style="font-size:12px">${car.year} • ${car.location}</div>
+            </div>
+          </div>
+          <div class="meta">
+            <div>
+              <div style="font-weight:700">${car.make} ${car.model}</div>
+              <div class="small">${car.year} • ${car.condition === 'new' ? 'Brand New' : 'Uganda Used'}</div>
+            </div>
+            <div style="text-align:right">
+              <div class="price">${formatPrice(car.price)}</div>
+              <div class="badge small">${car.condition.toUpperCase()}</div>
+            </div>
+          </div>
+          <div class="car-actions">
+            <button class="btn-outline" data-id="${car.id}">View</button>
+</div>
+        `;
+        inventoryEl.appendChild(card);
+      }
+
+      // attach view handlers
+      inventoryEl.querySelectorAll('.btn-outline').forEach(b=>{
+        b.addEventListener('click', ()=> openModal(b.dataset.id));
+      });
+
+      // keyboard accessibility: open on Enter when focused
+      inventoryEl.querySelectorAll('.card').forEach(c => {
+        c.addEventListener('keydown', (e)=>{
+          if(e.key === 'Enter') {
+            const btn = c.querySelector('.btn-outline');
+            if(btn) btn.click();
+          }
+        });
+      });
+    }
+
+    // Tab handlers
+    tabs.forEach(t=>{
+      t.addEventListener('click', ()=>{
+        tabs.forEach(x=>x.classList.remove('active'));
+        t.classList.add('active');
+        activeFilter = t.dataset.filter;
+        render();
+      });
+    });
+
+    // Search + sort
+    qInput.addEventListener('input', e => {
+      query = e.target.value;
+      render();
+    });
+    sortSelect.addEventListener('change', e=>{
+      sortBy = e.target.value;
+      render();
+    });
+
+    // Modal functions
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalImage = document.getElementById('modal-image');
+    const modalMeta = document.getElementById('modal-meta');
+    const modalDesc = document.getElementById('modal-desc');
+    const modalMail = document.getElementById('modal-mail');
+
+    function openModal(id){
+      const car = cars.find(c=>String(c.id) === String(id));
+      if(!car) return;
+      modalTitle.textContent = `${car.make} ${car.model} — ${car.year}`;
+      modalImage.style.backgroundImage = `url('${car.img}')`;
+      modalMeta.innerHTML = `<strong>${formatPrice(car.price)}</strong><br>${car.location} • ${car.condition === 'new' ? 'Brand new' : 'Uganda used'}`;
+      modalDesc.textContent = car.desc;
+      modalMail.setAttribute('href', `mailto:Rodine property consultants @gmail.com?subject=Inquiry%20about%20${encodeURIComponent(car.make + ' ' + car.model)}&body=Hello%20Rodine%20Motors,%0A%0AI%20would%20like%20more%20information%20about%20the%20${encodeURIComponent(car.make + ' ' + car.model)} (${car.year}).%0A%0AThanks.`);
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+    }
+
+    document.getElementById('closeModal').addEventListener('click', ()=> {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden','true');
+    });
+    modal.addEventListener('click', (e)=> {
+      if(e.target === modal) { modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); }
+    });
+
+    // initial render
+    render();
+  </script>
+</body>
+</html>
